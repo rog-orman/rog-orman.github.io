@@ -1,14 +1,16 @@
-body {
+/* General Styles */
+  body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
+  /* Responsive Navigation */
   .top {
     background-color: #222;
     padding: 1rem;
@@ -16,30 +18,30 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-  
+
   nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
   }
-  
+
   nav ul li {
     padding: 0 15px;
   }
-  
+
   nav ul li a {
     text-decoration: none;
     color: #f5f1e0;
     font-size: 1.2rem;
     transition: color 0.3s;
   }
-  
+
   nav ul li a:hover,
   nav ul li a.active {
     color: #86c5d6;
   }
-  
+
   h2{
     text-shadow: 1px 1px 2px #e5f5ff;
   }
@@ -97,10 +99,10 @@ body {
     text-align: center;
     padding: 15px;
   }
-  
+
   footer.bottom a {
-    color: #86c5d6;
-    text-decoration: none;
+      color: #86c5d6;
+      text-decoration: none;
   }
   
   @keyframes fadeIn {
@@ -157,10 +159,11 @@ body {
   
   .section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 4vh 0;
-  }
+}
   
   .section:nth-child(odd) {
     flex-direction: row-reverse;
@@ -178,8 +181,16 @@ body {
     transform: scale(1.05);
   }
   
+
   .section-content {
-    width: 50%;
+      width: 90%;
+      text-align: center;
+  }
+
+  @media (min-width: 768px) {
+      .section-content {
+          width: 50%;
+      }
   }
   
   .section-content h2 {
@@ -203,6 +214,35 @@ body {
     animation: fade-in 1.5s ease-in-out;
   }
   
+  /* Mobile Navigation */
+  @media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+/* Responsive Images & Videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
   /* Animations */
   
   @keyframes fade-in {

@@ -30,3 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 300);
     });
 });
+
+function toggleMenu() {
+    const navList = document.querySelector("nav ul");
+    navList.classList.toggle("active");
+}
