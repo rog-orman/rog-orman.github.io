@@ -1,5 +1,10 @@
 window.onload = function() { document.body.scrollTop = 0; }
 
+function toggleMenu() {
+    const navList = document.querySelector("nav ul");
+    navList.classList.toggle("active");
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll(".external-link");
     const popup = document.getElementById("popup");
@@ -30,8 +35,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 300);
     });
 });
-
-function toggleMenu() {
-    const navList = document.querySelector("nav ul");
-    navList.classList.toggle("active");
-}

@@ -1,309 +1,338 @@
 /* General Styles */
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Responsive Navigation */
-  .top {
-    background-color: #222;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Responsive Navigation */
+.top {
+  background-color: #222;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 0 15px;
+}
+
+nav img {
+  align: center; 
+  width: 135px; 
+  padding-left: 25px;
+  position: absolute;
+
+}
+nav ul li a {
+  text-decoration: none;
+  color: #f5f1e0;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #86c5d6;
+}
+
+h2{
+  text-shadow: 1px 1px 2px #e5f5ff;
+}
+
+.part1 {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+}
+
+.titleanimation {
+  font-size: 2.5rem;
+  animation: fadeIn 3s ease-in;
+}
+
+.fadeinwait {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.standardBox {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.standardBox:hover {
+  transform: scale(1.05);
+}
+
+.standardBox img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.standardBox .text {
+  padding: 10px;
+  text-align: center;
+}
+
+footer.bottom {
+  background-color: #222;
+  color: lightgray;
+  text-align: center;
+  padding: 15px;
+}
+
+footer.bottom a {
+    color: #86c5d6;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.logo{
+  font-size:150%;
+  font-family:monospace;
+  font-style: oblique 23deg;
+}
+
+.overlay{
+  width:100%;
+  height: 100%;
+  background-color: #e5f5ff;
+}
+.no-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+/* Styles for the FTC 14535 subpage with animations and sectioned layout */
+
+.project-header {
+  text-align: center;
+  padding: 4vh 2vw;
+  background-color: #37352f;
+  color: #f5f1e0;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.project-header h1 {
+  font-size: 6vh;
+  margin-bottom: 1vh;
+}
+
+.project-header p {
+  font-size: 3vh;
+  opacity: 0.8;
+}
+
+.project-content {
+  padding: 4vh 8vw;
+  color: #222;
+  background-color: #fbf7e8;
+  animation: slide-up 1.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 0;
+}
+
+.section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.section img {
+  width: 45%;
+  max-height: 40vh;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+}
+
+
+.section-content {
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section-content {
+        width: 50%;
+    }
+}
+
+.section-content h2 {
+  font-size: 4.5vh;
+  margin-bottom: 2vh;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.section-content p {
+  font-size: 3vh;
+  line-height: 1.5;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.footer {
+  text-align: center;
+  padding: 2vh 0;
+  background-color: #222;
+  color: lightgray;
+  font-size: 2vh;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+/* Mobile Navigation */
+
+/* Hide the menu button on larger screens */
+.menu-toggle {
+  display: none; /* Hide by default */
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block; /* Show button on smaller screens */
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 10px;
   }
 
   nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul li {
-    padding: 0 15px;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #f5f1e0;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-
-  nav ul li a:hover,
-  nav ul li a.active {
-    color: #86c5d6;
-  }
-
-  h2{
-    text-shadow: 1px 1px 2px #e5f5ff;
-  }
-  
-  .part1 {
-    text-align: center;
-    padding: 50px;
-    background-color: #fff;
-  }
-  
-  .titleanimation {
-    font-size: 2.5rem;
-    animation: fadeIn 3s ease-in;
-  }
-  
-  .fadeinwait {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 600px;
-    margin: 20px auto;
-  }
-  
-  .content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .standardBox {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .standardBox:hover {
-    transform: scale(1.05);
-  }
-  
-  .standardBox img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .standardBox .text {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  footer.bottom {
-    background-color: #222;
-    color: lightgray;
-    text-align: center;
-    padding: 15px;
-  }
-
-  footer.bottom a {
-      color: #86c5d6;
-      text-decoration: none;
-  }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  .logo{
-    font-size:150%;
-    font-family:monospace;
-    font-style: oblique 23deg;
-  }
-  
-  .overlay{
-    width:100%;
-    height: 100%;
-    background-color: #e5f5ff;
-  }
-  .no-link {
-    text-decoration: none;
-    color: inherit;
-    cursor: default;
-  }
-  
-  /* Styles for the FTC 14535 subpage with animations and sectioned layout */
-  
-  .project-header {
-    text-align: center;
-    padding: 4vh 2vw;
-    background-color: #37352f;
-    color: #f5f1e0;
-    animation: fade-in 1.5s ease-in-out;
-  }
-  
-  .project-header h1 {
-    font-size: 6vh;
-    margin-bottom: 1vh;
-  }
-  
-  .project-header p {
-    font-size: 3vh;
-    opacity: 0.8;
-  }
-  
-  .project-content {
-    padding: 4vh 8vw;
-    color: #222;
-    background-color: #fbf7e8;
-    animation: slide-up 1.5s ease-out;
-    display: flex;
-    flex-direction: column;
-    gap: 5vh;
-  }
-  
-  .section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 4vh 0;
-  }
-  
-  .section:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-  
-  .section img {
-    width: 45%;
-    max-height: 40vh;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .section img:hover {
-    transform: scale(1.05);
-  }
-  
-
-  .section-content {
-      width: 90%;
+      display: none; /* Hide nav links initially */
+      flex-direction: column;
+      background-color: #222;
+      width: 100%;
+      position: absolute;
+      top: 60px; /* Adjust based on header height */
+      left: 0;
       text-align: center;
+      padding: 10px 0;
   }
 
-  @media (min-width: 768px) {
-      .section-content {
-          width: 50%;
-      }
+  nav ul.active {
+      display: flex; /* Show when toggled */
   }
   
-  .section-content h2 {
-    font-size: 4.5vh;
-    margin-bottom: 2vh;
-    animation: fade-in 1.5s ease-in-out;
+  nav img{
+    position: fixed;
+    padding-left: 10%;
+    width:auto;
+    height:30px;
+    padding-top: 15px;
+    padding-bottom: auto;
+    pointer-events: none
   }
-  
-  .section-content p {
-    font-size: 3vh;
-    line-height: 1.5;
-    animation: fade-in 1.5s ease-in-out;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 2vh 0;
-    background-color: #222;
-    color: lightgray;
-    font-size: 2vh;
-    animation: fade-in 1.5s ease-in-out;
-  }
-  
-  /* Mobile Navigation */
-  @media (max-width: 768px) {
-    .top {
-        flex-direction: column;
-        text-align: center;
-    }
-    nav ul {
-        flex-direction: column;
-        display: none;
-    }
-    nav ul.active {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-  }
-
+}
 /* Responsive Images & Videos */
 img, video {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
-  /* Animations */
-  
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /*Pop-up window*/
-  .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    z-index: 1000;
-    text-align: center;
+/* Animations */
+
+@keyframes fade-in {
+  from {
     opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   }
-  .popup.active {
-    transform: translate(-50%, -50%) scale(1);
+  to {
     opacity: 1;
   }
-  .popupoverlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .popup button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  #continue { background: #1b1b2e; color: white; }
-  #continue:hover { background: #1b1b2e; }
-  #cancel { background: #1b1b2e; color: white; }
-  #cancel:hover { background: #1b1b2e; }
+}
+
+/*Pop-up window*/
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.popupoverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+.popup button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#continue { background: #1b1b2e; color: white; }
+#continue:hover { background: #1b1b2e; }
+#cancel { background: #1b1b2e; color: white; }
+#cancel:hover { background: #1b1b2e; }
