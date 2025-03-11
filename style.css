@@ -256,7 +256,7 @@ footer.bottom a {
   }
   
   nav img{
-    position: fixed;
+    position: absolute;
     padding-left: 10%;
     width:auto;
     height:30px;
